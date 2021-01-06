@@ -1,0 +1,8 @@
+README.md
+setup.py
+mdf_helper/__init__.py
+mdf_helper/my_lib.py
+mdfreader_helper.egg-info/PKG-INFO
+mdfreader_helper.egg-info/SOURCES.txt
+mdfreader_helper.egg-info/dependency_links.txt
+mdfreader_helper.egg-info/top_level.txt
