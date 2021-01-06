@@ -1,4 +1,22 @@
 # mdfreader读取MDF/DAT文件后的常用操作
+## 安装与使用
+使用pip工具安装：
+
+    pip install mdfreader_helper
+
+从my_lib导入：
+
+    from mdf_helper.my_lib import *
+    
+使用实例：
+    
+    filenames = glob.glob('./dat/idc/*.dat')  # 遍历文件夹内所有dat文件
+    abbrs = ['n', 'wMCT', 'MCT_', 'ISC']  # 定义在文件中查找的关键字。
+    df = pd.DataFrame()  # 初始化dataframe
+    for file in filenames:
+        out = mdf_parser(file, abbrs).keyword_merge_to_pd()  # 在每个文件中依照abbrs中的关键字寻找变量对应的数据列
+        #df.columns = ['Speed', 'Torque', 'blabla1', 'blabla2']
+        df = pd.concat([df, out], axis=0)  # 将从每个文件中提取出的dataframe拼接成最终的大dataframe
 ## my_lib.py 
 *封装常用函数，用于机器学习预处理。* </br>
 **1. parse_mdf(filename, columns)**
