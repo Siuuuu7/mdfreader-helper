@@ -11,7 +11,7 @@
 使用实例：
     
     filenames = glob.glob('./dat/idc/*.dat')  # 遍历文件夹内所有dat文件
-    abbrs = ['n', 'wMCT', 'MCT_', 'ISC']  # 定义在文件中查找的关键字。
+    abbrs = ['n', 'wMCT', 'MCT_', 'ISC']  # 定义在文件中查找所需的信号所对应的关键字缩写。
     df = pd.DataFrame()  # 初始化dataframe
     for file in filenames:
         out = mdf_parser(file, abbrs).keyword_merge_to_pd()  # 在每个文件中依照abbrs中的关键字寻找变量对应的数据列
